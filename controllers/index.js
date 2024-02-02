@@ -13,7 +13,6 @@ module.exports = {
             const { data } = response;
             res.json(data);
           }catch(e){
-            console.log(e);
             res.json(e.response.data);
           }
       },
