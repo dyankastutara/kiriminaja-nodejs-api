@@ -7,7 +7,7 @@ module.exports = {
          try{
             const response = await axios.post(`${process.env.HOST_KIRIMINAJA}/api/mitra/province`,{},{
               headers: {
-                Authorization : process.env.API_KEY_KIRIMINAJA
+                Authorization : req.headers.Authorization
               }
             })
             const { data } = response;
@@ -20,7 +20,7 @@ module.exports = {
          try{
             const response = await axios.post(`${process.env.HOST_KIRIMINAJA}/api/mitra/city`,req.body,{
               headers: {
-                Authorization : process.env.API_KEY_KIRIMINAJA
+                Authorization : req.headers.Authorization
               }
             })
             const { data } = response;
@@ -33,7 +33,7 @@ module.exports = {
          try{
             const response = await axios.post(`${process.env.HOST_KIRIMINAJA}/api/mitra/kecamatan`,req.body,{
               headers: {
-                Authorization : process.env.API_KEY_KIRIMINAJA
+                Authorization : req.headers.Authorization
               }
             })
             const { data } = response;
@@ -48,7 +48,7 @@ module.exports = {
          try{
             const response = await axios.post(`${process.env.HOST_KIRIMINAJA}/api/mitra/shipping_price`,req.body,{
               headers: {
-                Authorization : process.env.API_KEY_KIRIMINAJA
+                Authorization : req.headers.Authorization
               }
             })
             const { data } = response;
@@ -61,7 +61,7 @@ module.exports = {
          try{
             const response = await axios.post(`${process.env.HOST_KIRIMINAJA}/api/mitra/v3/instant/pickup/request`,req.body,{
                headers: {
-                  Authorization : process.env.API_KEY_KIRIMINAJA
+                  Authorization : req.headers.Authorization
                }
             })
             const { data } = response;
@@ -75,7 +75,7 @@ module.exports = {
       try{
         const response = await axios.post(`${process.env.HOST_KIRIMINAJA}/api/mitra/v2/schedules`,{},{
           headers: {
-            Authorization : process.env.API_KEY_KIRIMINAJA
+            Authorization : req.headers.Authorization
           }
         })
         res.json(response.data);
@@ -88,7 +88,7 @@ module.exports = {
         try {
           const response = await axios.post(`${process.env.HOST_KIRIMINAJA}/api/mitra/v2/request_pickup`, req.body,{
             headers: {
-              Authorization : process.env.API_KEY_KIRIMINAJA
+              Authorization : req.headers.Authorization
             }
           })
           res.json(response.data)
@@ -100,7 +100,7 @@ module.exports = {
         try {
           const response = await axios.post(`${process.env.HOST_KIRIMINAJA}/api/mitra/v2/request_pickup`, req.body,{
             headers: {
-              Authorization : process.env.API_KEY_KIRIMINAJA
+              Authorization : req.headers.Authorization
             }
           })
           res.json(response.data);
@@ -116,7 +116,7 @@ module.exports = {
             order_id: req.body.awb
           },{
             headers: {
-              Authorization : process.env.API_KEY_KIRIMINAJA
+              Authorization : req.headers.Authorization
             }
           })
           res.json(response.data);
