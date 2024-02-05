@@ -13,7 +13,7 @@ module.exports = {
             const { data } = response;
             res.json(data);
           }catch(e){
-            res.json(e.response.data);
+            res.json(e.response?.data);
           }
       },
       city: async (req, res) => {
@@ -80,7 +80,7 @@ module.exports = {
         })
         res.json(response.data);
       }catch(e){
-        res.json(e.response.data);
+        res.json(e.response?.data);
       }
    },
    pickup: {
@@ -93,7 +93,7 @@ module.exports = {
           })
           res.json(response.data)
         } catch (e) {
-          res.json(e.response.data)
+          res.json(e.response?.data)
         }
       },
       instant: async (obj) => {
@@ -105,24 +105,22 @@ module.exports = {
           })
           res.json(response.data);
         } catch (e) {
-          res.json(e.response.data);
+          res.json(e.response?.data);
         }
       },
-    },
-    tracking: {
-      express: async (req, res) => {
-        try{
-          const response = await axios.post(`${process.env.HOST_KIRIMINAJA}/api/mitra/tracking`, {
-            order_id: req.body.awb
-          },{
-            headers: {
-              Authorization : req.headers.authorization
-            }
-          })
-          res.json(response.data);
-        }catch(e){
-          res.data(e.response.data)
-        }
+   },
+   tracking: {
+    express: async (req, res) => {
+      try{
+        const response = await axios.post(`${process.env.HOST_KIRIMINAJA}/api/mitra/tracking`, req.body,{
+          headers: {
+            Authorization : req.headers.authorization
+          }
+        })
+        res.json(response.data);
+      }catch(e){
+        res.json(e.response?.data)
       }
     }
+   }
 }
