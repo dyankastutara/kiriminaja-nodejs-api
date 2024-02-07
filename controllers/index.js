@@ -122,5 +122,31 @@ module.exports = {
         res.json(e.response?.data)
       }
     }
+   },
+   void: {
+     express: async (req, res) => {
+       try{
+         const response = await axios.post(`${process.env.HOST_KIRIMINAJA}/api/mitra/v3/cancel_shipment`, req.body,{
+           headers: {
+             Authorization : req.headers.authorization
+           }
+         })
+         res.json(response.data);
+       }catch(e){
+         res.json(e.response?.data)
+       }
+     },
+     instant: async (req, res) => {
+       try{
+         const response = await axios.delete(`${process.env.HOST_KIRIMINAJA}/open-api/v1/instants/${req.params.order_id}`,{
+           headers: {
+             Authorization : req.headers.authorization
+           }
+         })
+         res.json(response.data);
+       }catch(e){
+         res.json(e.response?.data)
+       }
+     }
    }
 }

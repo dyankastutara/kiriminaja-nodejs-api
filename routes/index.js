@@ -12,5 +12,7 @@ router.post('/schedules', controller.schedules);
 router.post('/pickup/express', controller.pickup.express);
 router.post('/pickup/instant', controller.pickup.instant);
 router.post('/tracking/express', controller.tracking.express);
+router.post('/void/express', controller.void.express);
+router.post('/void/instant', controller.void.instant);
 
 module.exports = router;
