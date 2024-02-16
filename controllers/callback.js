@@ -19,10 +19,11 @@ module.exports = {
   webhook: async (req, res) => {
     try{
       console.log("masuk sini gak");
-      if(req.headers.authorization !== process.env.API_KEY_KIRIMINAJA){
-        throw new Error("Callback Webhook Kiriminaja Not valid")
-      }
-      const response = await axios.patch(`${process.env.API_PLASGOS}/callback/kiriminaja`,req.body,{
+//      if(req.headers.authorization !== process.env.API_KEY_KIRIMINAJA){
+//	console.log("masuk error", req.headers.authorization === process.env.API_KEY_KIRIMINAJA);
+  //      throw new Error("Callback Webhook Kiriminaja Not valid")
+    //  }
+      const response = await axios.post(`${process.env.API_PLASGOS}/callback/kiriminaja/webhook`,req.body,{
         headers: {
           Authorization : req.headers.authorization
         }
