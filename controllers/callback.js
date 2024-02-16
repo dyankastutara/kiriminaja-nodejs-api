@@ -21,7 +21,7 @@ module.exports = {
       // if(req.token !== process.env.API_KEY_KIRIMINAJA){
       //   throw new Error("Callback Webhook Kiriminaja Not valid")
       // }
-      const response = await axios.patch(`${process.env.API_PLASGOS}/callback/kiriminaja/webhook`,req.body,{
+      const response = await axios.post(`${process.env.API_PLASGOS}/callback/kiriminaja/webhook`,req.body,{
         headers: {
           Authorization : req.headers.authorization
         }
