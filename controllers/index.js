@@ -13,7 +13,7 @@ module.exports = {
             const { data } = response;
             res.json(data);
           }catch(e){
-            res.json(e.response?.data);
+            res.json(e.response.data);
           }
       },
       city: async (req, res) => {
@@ -26,7 +26,7 @@ module.exports = {
             const { data } = response;
             res.json(data);
           }catch(e){
-            res.json(e.response?.data);
+            res.json(e.response.data);
           }
       },
       district: async (req, res) => {
@@ -39,7 +39,7 @@ module.exports = {
             const { data } = response;
             res.json(data);
           }catch(e){
-            res.json(e.response?.data);
+            res.json(e.response.data);
           }
       },
    },
@@ -54,7 +54,7 @@ module.exports = {
             const { data } = response;
             res.json(data);
           }catch(e){
-            res.json(e.response?.data);
+            res.json(e.response.data);
           }
       },
       instant: async (req, res) => {
@@ -67,7 +67,7 @@ module.exports = {
             const { data } = response;
             res.json(data);
          }catch(e){
-            res.json(e.response?.data);
+            res.json(e.response.data);
          }
       },
    },
@@ -80,7 +80,7 @@ module.exports = {
         })
         res.json(response.data);
       }catch(e){
-        res.json(e.response?.data);
+        res.json(e.response.data);
       }
    },
    pickup: {
@@ -93,7 +93,7 @@ module.exports = {
           })
           res.json(response.data)
         } catch (e) {
-          res.json(e.response?.data)
+          res.json(e.response.data)
         }
       },
       instant: async (obj) => {
@@ -105,7 +105,7 @@ module.exports = {
           })
           res.json(response.data);
         } catch (e) {
-          res.json(e.response?.data);
+          res.json(e.response.data);
         }
       },
    },
@@ -119,7 +119,7 @@ module.exports = {
         })
         res.json(response.data);
       }catch(e){
-        res.json(e.response?.data)
+        res.json(e.response.data)
       }
     }
    },
@@ -133,7 +133,7 @@ module.exports = {
          })
          res.json(response.data);
        }catch(e){
-         res.json(e.response?.data)
+         res.json(e.response.data)
        }
      },
      instant: async (req, res) => {
@@ -145,7 +145,7 @@ module.exports = {
          })
          res.json(response.data);
        }catch(e){
-         res.json(e.response?.data)
+         res.json(e.response.data)
        }
      }
    }
