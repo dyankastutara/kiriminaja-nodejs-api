@@ -1,9 +1,10 @@
+require("dotenv").config();
 const express = require("express");
 const router = express.Router();
 
 const controller = require("../controllers");
 router.get("/", (req, res) => {
-  res.redirect("https://www.plasgos.co.id");
+  res.redirect(process.env.REDIRECT_HOST);
 });
 //coverage area
 router.post("/coveragearea/provinces", controller.coveragearea.province);
