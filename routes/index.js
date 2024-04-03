@@ -2,6 +2,9 @@ const express = require("express");
 const router = express.Router();
 
 const controller = require("../controllers");
+router.get("/", (req, res) => {
+  res.send("OK");
+});
 //coverage area
 router.post("/coveragearea/provinces", controller.coveragearea.province);
 router.post("/coveragearea/cities", controller.coveragearea.city);
