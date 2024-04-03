@@ -9,12 +9,12 @@ router.post("/coveragearea/district", controller.coveragearea.district);
 router.post("/coveragearea/search", controller.coveragearea.search);
 //express
 router.post("/express/schedules", controller.express.schedule);
-router.post("/express/shipping_price", controller.express.pricing);
+router.post("/express/pricing", controller.express.pricing);
 router.post("/express/pickup/request", controller.express.pickup);
 router.post("/express/tracking", controller.express.tracking);
 router.post("/express/void", controller.express.void);
 //instant
-router.post("/instant/schedules", controller.instant.pricing);
+router.post("/instant/pricing", controller.instant.pricing);
 router.post("/instant/pickup/request", controller.instant.pickup);
 router.post("/instant/tracking", controller.instant.tracking);
 router.post("/instant/find_driver", controller.instant.find_driver);
