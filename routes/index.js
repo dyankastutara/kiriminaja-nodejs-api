@@ -3,7 +3,7 @@ const router = express.Router();
 
 const controller = require("../controllers");
 router.get("/", (req, res) => {
-  res.send("OK");
+  res.redirect("https://www.plasgos.co.id");
 });
 //coverage area
 router.post("/coveragearea/provinces", controller.coveragearea.province);
