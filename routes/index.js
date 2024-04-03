@@ -4,7 +4,7 @@ const router = express.Router();
 
 const controller = require("../controllers");
 router.get("/", (req, res) => {
-  res.redirect(process.env.REDIRECT_HOST);
+  res.redirect(process.env.HOST_REDIRECT);
 });
 //coverage area
 router.post("/coveragearea/provinces", controller.coveragearea.province);
