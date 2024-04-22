@@ -7,13 +7,15 @@ router.get("/", (req, res) => {
   res.redirect(process.env.HOST_REDIRECT);
 });
 router.get("/status", (req, res) => {
-  var IP = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
+  var IP = req.ip;
+  var LOCAL_IP = req.socket.localAddress;
 
   res.json({
-    status: process.env.DEBUG ? "development" : "production",
+    status: process.env.DEBUG === "true" ? "development" : "production",
     ka_host: process.env.KIRIMINAJA_HOST,
     port: process.env.PORT,
     ip: IP,
+    local_address: LOCAL_IP,
     connected: true,
   });
 });
