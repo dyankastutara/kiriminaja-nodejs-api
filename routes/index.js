@@ -6,6 +6,17 @@ const controller = require("../controllers");
 router.get("/", (req, res) => {
   res.redirect(process.env.HOST_REDIRECT);
 });
+router.get("/status", (req, res) => {
+  var IP = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
+
+  res.json({
+    status: process.env.DEBUG ? "development" : "production",
+    ka_host: process.env.KIRIMINAJA_HOST,
+    port: process.env.PORT,
+    ip: IP,
+    connected: true,
+  });
+});
 //coverage area
 router.post("/coveragearea/provinces", controller.coveragearea.province);
 router.post("/coveragearea/cities", controller.coveragearea.city);
