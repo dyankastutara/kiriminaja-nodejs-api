@@ -12,7 +12,7 @@ router.get("/status", (req, res) => {
 
   res.json({
     status: process.env.DEBUG === "true" ? "development" : "production",
-    ka_host: process.env.KIRIMINAJA_HOST,
+    ka_host: process.env.HOST_KIRIMINAJA,
     port: process.env.PORT,
     ip: IP,
     local_address: LOCAL_IP,
