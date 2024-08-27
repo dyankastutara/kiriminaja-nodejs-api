@@ -23,6 +23,7 @@ router.get("/status", (req, res) => {
 router.post("/coveragearea/provinces", controller.coveragearea.province);
 router.post("/coveragearea/cities", controller.coveragearea.city);
 router.post("/coveragearea/district", controller.coveragearea.district);
+router.post("/coveragearea/subdistrict", controller.coveragearea.subdistrict);
 router.post("/coveragearea/search", controller.coveragearea.search);
 //express
 router.post("/express/schedules", controller.express.schedule);

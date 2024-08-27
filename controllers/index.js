@@ -54,6 +54,23 @@ module.exports = {
         res.json(e.response.data);
       }
     },
+    subdistrict: async (req, res) => {
+      try {
+        const response = await axios.post(
+          `${process.env.HOST_KIRIMINAJA}/api/mitra/kelurahan`,
+          req.body,
+          {
+            headers: {
+              Authorization: req.headers.authorization,
+            },
+          }
+        );
+        const { data } = response;
+        res.json(data);
+      } catch (e) {
+        res.json(e.response.data);
+      }
+    },
     search: async (req, res) => {
       try {
         const response = await axios.post(
