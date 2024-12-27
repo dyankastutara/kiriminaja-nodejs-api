@@ -280,7 +280,7 @@ module.exports = {
     express: async (req, res) => {
       try {
         const response = await axios.post(
-          `${process.env.HOST_KIRIMINAJA}/api/mitra/v5/shipping_price`,
+          `${process.env.HOST_KIRIMINAJA}/api/mitra/v6.1/shipping_price`,
           req.body,
           {
             headers: {
